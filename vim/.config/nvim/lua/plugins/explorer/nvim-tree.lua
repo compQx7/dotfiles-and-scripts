@@ -3,7 +3,7 @@ local nvimtree = {
 	version = '*',
 	lazy = false,
 	dependencies = {
-		'nvim-tree/nivm-web-devicons',
+		--'nvim-tree/nivm-web-devicons',
 	},
 	config = function()
 		require('nvim-tree').setup {

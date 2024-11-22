@@ -1,4 +1,3 @@
-require('settings/options')
-require('settings/keymaps')
+require('core')
 require('plugins/lazy')
 
