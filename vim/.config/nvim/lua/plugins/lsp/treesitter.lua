@@ -14,11 +14,13 @@ local treesitter = {
 		require('nvim-treesitter.configs').setup({
 			auto_install = true,
 			ensure_installed = {
+				"bash",
 				"c",
 				"c_sharp",
 				"cpp",
 				"css",
 				"diff",
+				"dockerfile",
 				"gitcommit",
 				"gitignore",
 				"go",
@@ -36,11 +38,13 @@ local treesitter = {
 				"query",
 				"rust",
 				"scss",
+				"sql",
 				"typescript",
 				"tsx",
 				"toml",
 				"vim",
 				"vimdoc",
+				"yaml",
 			},
 			highlight = {
 				enable = true,

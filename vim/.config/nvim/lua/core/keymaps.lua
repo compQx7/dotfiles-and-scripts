@@ -1,5 +1,7 @@
 vim.api.nvim_set_var('mapleader', ' ')
 
+-- TODO: Window size
+
 vim.keymap.set('n', 'J', '5j')
 vim.keymap.set('n', 'K', '5k')
 vim.keymap.set('n', '<Leader>h', '0')
