@@ -15,11 +15,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	-- edit
+	require('plugins/edit/hop'),
+	require('plugins/edit/nvim-surround'),
 	-- explorer
-	require('plugins/explorer/nvim-tree'),
-	require('plugins/explorer/telescope'),
+	require('plugins/search/nvim-tree'),
+	require('plugins/search/telescope'),
 	-- git
-	-- require('plugins/git/gitsigns'),
+	require('plugins/git/gitsigns'),
 	-- lsp
 	require('plugins/lsp/treesitter'),
 	-- require('plugins/lsp/lspsaga'),

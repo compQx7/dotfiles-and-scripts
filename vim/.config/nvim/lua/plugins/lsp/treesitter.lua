@@ -12,7 +12,7 @@ local treesitter = {
 	end,
 	config = function()
 		require('nvim-treesitter.configs').setup({
-			auto_install = true,
+			auto_install = false,
 			ensure_installed = {
 				"bash",
 				"c",
