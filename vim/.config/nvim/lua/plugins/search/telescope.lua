@@ -8,9 +8,10 @@ local telescope = {
 		require('telescope').setup({})
 		local builtin = require('telescope.builtin')
 		vim.keymap.set('n', '<Leader>fn', builtin.find_files, { desc = 'Telescope find files' })
-		vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+		vim.keymap.set('n', '<Leader>fa', builtin.live_grep, { desc = 'Telescope live grep' })
 		vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 		vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+		vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
 
 		function _G.live_grep_in_directory()
 			local directory_path = vim.fn.input('Search path: ', '', 'file')

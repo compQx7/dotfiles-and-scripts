@@ -15,9 +15,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	-- ai
+	require('plugins/ai/copilot'),
 	-- edit
 	require('plugins/edit/hop'),
 	require('plugins/edit/nvim-surround'),
+	require('plugins/edit/autopairs'),
 	-- explorer
 	require('plugins/search/nvim-tree'),
 	require('plugins/search/telescope'),
@@ -25,6 +28,8 @@ local plugins = {
 	require('plugins/git/gitsigns'),
 	-- lsp
 	require('plugins/lsp/treesitter'),
+	-- require('plugins/lsp/lspconfig'),
+	-- require('plugins/lsp/nvim-cmp'),
 	-- require('plugins/lsp/lspsaga'),
 	-- ui
 	require('plugins/ui/tokyonight'),

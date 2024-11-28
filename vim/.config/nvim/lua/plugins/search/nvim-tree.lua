@@ -22,7 +22,9 @@ local nvimtree = {
 		})
 	end,
 	keys = {
-		{ mode = 'n', '<Leader>e', '<cmd>NvimTreeToggle<CR>' },
+		{ mode = 'n', '<Leader>ee', '<cmd>NvimTreeToggle<CR>' },
+		{ mode = 'n', '<Leader>er', '<cmd>NvimTreeCollapseKeepBuffers<CR>' },
+		{ mode = 'n', '<Leader>ec', '<cmd>NvimTreeFindFileToggle<CR>' },
 	}
 }
 
