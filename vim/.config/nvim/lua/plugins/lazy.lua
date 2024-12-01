@@ -18,6 +18,7 @@ local plugins = {
 	-- ai
 	require('plugins/ai/copilot'),
 	-- base
+	require('plugins/base/treesitter'),
 	-- require('plugins/base/overseer'),
 	-- edit
 	require('plugins/edit/autopairs'),
@@ -33,9 +34,12 @@ local plugins = {
 	-- git
 	require('plugins/git/gitsigns'),
 	-- lsp
-	require('plugins/lsp/treesitter'),
-	-- require('plugins/lsp/lspconfig'),
-	-- require('plugins/lsp/nvim-cmp'),
+	-- require('plugins/lsp'),
+	require('plugins/lsp/lspconfig'),
+	require('plugins/lsp/nvim-cmp'),
+	require('plugins/lsp/cmp-nvim-lsp'),
+	require('plugins/lsp/mason'),
+	require('plugins/lsp/masonlspconfig'),
 	-- require('plugins/lsp/lspsaga'),
 	-- ui
 	require('plugins/ui/barbar'),
@@ -45,6 +49,10 @@ local plugins = {
 	require('plugins/ui/render-markdown'),
 	-- require('kevinhwang91/nvim-bqf'),
 	-- require('folke/which-key.nvim'),
+	-- require({ 'hrsh7th/nvim-cmp' }),
+	-- require({ 'L3MON4D3/LuaSnip' }),
+	-- require({ 'simrat39/rust-tools.nvim' }),
+	-- require({ 'jose-elias-alvarez/typescript.nvim' }),
 }
 
 require('lazy').setup(plugins)
