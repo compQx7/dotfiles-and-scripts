@@ -12,7 +12,18 @@ local function setup_server(server_name, opts)
     opts.on_attach = function(client, bufnr)
         local bufopts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, bufopts)
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+        vim.keymap.set('n', '<Leader>k', vim.lsp.buf.hover, bufopts)
+        vim.keymap.set('n', '<Leader>ar', vim.lsp.buf.rename, bufopts)
+        vim.keymap.set('n', '<Leader>aa', vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set('n', '<Leader>ae', vim.diagnostic.open_float, bufopts)
+        vim.keymap.set('n', '<Leader>g]', vim.diagnostic.goto_next, bufopts)
+        vim.keymap.set('n', '<Leader>g[', vim.diagnostic.goto_prev, bufopts)
+		vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+			vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
+		)
     end
 
     lspconfig[server_name].setup(opts)

@@ -27,7 +27,7 @@ local plugins = {
 	require('plugins/edit/nvim-surround'),
 	require('plugins/edit/treesj'),
 	require('plugins/edit/ts-comments'),
-	-- explorer
+	-- search
 	-- require('plugins/search/nvim-tree'),
 	require('plugins/search/oil'),
 	require('plugins/search/telescope'),
@@ -36,11 +36,15 @@ local plugins = {
 	-- lsp
 	-- require('plugins/lsp'),
 	require('plugins/lsp/lspconfig'),
-	require('plugins/lsp/nvim-cmp'),
-	require('plugins/lsp/cmp-nvim-lsp'),
 	require('plugins/lsp/mason'),
 	require('plugins/lsp/masonlspconfig'),
+	require('plugins/lsp/nvim-cmp'),
+	require('plugins/lsp/cmp-nvim-lsp'),
+	-- require('plugins/lsp/cmp-buffer'),
 	-- require('plugins/lsp/lspsaga'),
+	-- require({ 'L3MON4D3/LuaSnip' }),
+	-- require({ 'simrat39/rust-tools.nvim' }),
+	-- require({ 'jose-elias-alvarez/typescript.nvim' }),
 	-- ui
 	require('plugins/ui/barbar'),
 	require('plugins/ui/tokyonight'),
@@ -49,10 +53,6 @@ local plugins = {
 	require('plugins/ui/render-markdown'),
 	-- require('kevinhwang91/nvim-bqf'),
 	-- require('folke/which-key.nvim'),
-	-- require({ 'hrsh7th/nvim-cmp' }),
-	-- require({ 'L3MON4D3/LuaSnip' }),
-	-- require({ 'simrat39/rust-tools.nvim' }),
-	-- require({ 'jose-elias-alvarez/typescript.nvim' }),
 }
 
 require('lazy').setup(plugins)
