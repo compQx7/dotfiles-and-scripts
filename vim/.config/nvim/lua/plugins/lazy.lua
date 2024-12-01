@@ -17,12 +17,18 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	-- ai
 	require('plugins/ai/copilot'),
+	-- base
+	-- require('plugins/base/overseer'),
 	-- edit
+	require('plugins/edit/autopairs'),
+	require('plugins/edit/dial'),
 	require('plugins/edit/hop'),
 	require('plugins/edit/nvim-surround'),
-	require('plugins/edit/autopairs'),
+	require('plugins/edit/treesj'),
+	require('plugins/edit/ts-comments'),
 	-- explorer
-	require('plugins/search/nvim-tree'),
+	-- require('plugins/search/nvim-tree'),
+	require('plugins/search/oil'),
 	require('plugins/search/telescope'),
 	-- git
 	require('plugins/git/gitsigns'),
@@ -32,7 +38,13 @@ local plugins = {
 	-- require('plugins/lsp/nvim-cmp'),
 	-- require('plugins/lsp/lspsaga'),
 	-- ui
+	require('plugins/ui/barbar'),
 	require('plugins/ui/tokyonight'),
+	require('plugins/ui/indent-blankline'),
+	require('plugins/ui/lualine'),
+	require('plugins/ui/render-markdown'),
+	-- require('kevinhwang91/nvim-bqf'),
+	-- require('folke/which-key.nvim'),
 }
 
 require('lazy').setup(plugins)
