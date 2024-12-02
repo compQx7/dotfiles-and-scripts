@@ -17,22 +17,30 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	-- ai
 	require('plugins/ai/copilot'),
+
 	-- base
+	require('plugins/base/aerial'),
+	require('plugins/base/toggleterm'),
 	require('plugins/base/treesitter'),
 	-- require('plugins/base/overseer'),
+
 	-- edit
 	require('plugins/edit/autopairs'),
 	require('plugins/edit/dial'),
 	require('plugins/edit/hop'),
 	require('plugins/edit/nvim-surround'),
-	require('plugins/edit/treesj'),
 	require('plugins/edit/ts-comments'),
+	require('plugins/edit/treesj'),
+
 	-- search
 	-- require('plugins/search/nvim-tree'),
 	require('plugins/search/oil'),
 	require('plugins/search/telescope'),
+
 	-- git
+	require('plugins/git/diffview'),
 	require('plugins/git/gitsigns'),
+
 	-- lsp
 	-- require('plugins/lsp'),
 	require('plugins/lsp/lspconfig'),
@@ -45,12 +53,14 @@ local plugins = {
 	-- require({ 'L3MON4D3/LuaSnip' }),
 	-- require({ 'simrat39/rust-tools.nvim' }),
 	-- require({ 'jose-elias-alvarez/typescript.nvim' }),
+
 	-- ui
 	require('plugins/ui/barbar'),
 	require('plugins/ui/tokyonight'),
 	require('plugins/ui/indent-blankline'),
 	require('plugins/ui/lualine'),
 	require('plugins/ui/render-markdown'),
+
 	-- require('kevinhwang91/nvim-bqf'),
 	-- require('folke/which-key.nvim'),
 }
