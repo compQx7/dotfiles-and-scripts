@@ -22,6 +22,7 @@ local plugins = {
 	require('plugins/base/aerial'),
 	require('plugins/base/toggleterm'),
 	require('plugins/base/treesitter'),
+	require('plugins/base/fidget'),
 	-- require('plugins/base/overseer'),
 
 	-- edit
@@ -64,6 +65,8 @@ local plugins = {
 
 	-- require('kevinhwang91/nvim-bqf'),
 	-- require('folke/which-key.nvim'),
+	-- require('/no-neck-pain.nvim'),
+	-- require('/lsp-signature.nvim'),
 }
 
 require('lazy').setup(plugins)
