@@ -1,4 +1,26 @@
+-- local is_windows = vim.loop.os_uname().sysname == 'Windows'
+-- local is_vscode = vim.env.VSCODE == '1'
+local is_vscode = vim.fn.exists('g:vscode') == 1
+
 require('core')
-require('plugins/lazy')
-require('plugins/lsp')
+
+if vim.loop.os_name().sysname == 'Windows_NT' then
+	local pwsh_options = {
+		shell = vim.fn.executable('pwsh') and 'pwsh' or 'powershell',
+		shellcmdflag = '-NoLogo -NoProfile -ExecutionPlolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;',
+		shellredir = '-RedirectStandardOutput %s -NoNewWindow -Wait',
+		shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode',
+		shellquote = '',
+		shellxquote = '',
+	}
+
+	for k, v in pairs(pwsh_options) do
+		vim.opt[k] = v
+	end
+end
+
+if is_vscode then
+	require('plugins/lazy')
+	require('plugins/lsp')
+end
 

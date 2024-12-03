@@ -31,6 +31,7 @@ local plugins = {
 	require('plugins/edit/nvim-surround'),
 	require('plugins/edit/ts-comments'),
 	require('plugins/edit/treesj'),
+	-- require('plugins/edit/comment'),
 
 	-- search
 	-- require('plugins/search/nvim-tree'),
