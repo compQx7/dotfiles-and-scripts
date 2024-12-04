@@ -1,5 +1,5 @@
 -- local is_windows = vim.loop.os_uname().sysname == 'Windows'
--- local is_vscode = vim.env.VSCODE == '1'
+-- local is_vscode = vim.g.vscode
 local is_vscode = vim.fn.exists('g:vscode') == 1
 
 require('core')

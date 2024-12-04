@@ -70,4 +70,5 @@ local plugins = {
 }
 
 require('lazy').setup(plugins)
+require('plugins.keymaps').setup()
 
