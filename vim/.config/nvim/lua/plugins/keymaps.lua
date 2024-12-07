@@ -17,8 +17,6 @@ function telescope()
 	local builtin = require('telescope.builtin')
 	function _G.live_grep_in_directory()
 		local directory_path = vim.fn.input('Search path: ', '', 'file')
-		-- ログ
-		print(directory_path)
 		if directory_path then
 			builtin.live_grep({ cwd = directory_path })
 		else
