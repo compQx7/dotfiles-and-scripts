@@ -7,9 +7,7 @@ local aerial = {
 	config = function()
 		require('aerial').setup({})
 	end,
-	-- keys = {
-	-- 	{ 'n', '<leader>o', '<cmd>AerialToggle!<CR>' },
-	-- }
+	vim.keymap.set("n", "<leader>to", "<cmd>AerialToggle!<CR>", { desc = 'Aerial toggle' })
 }
 
 return aerial
