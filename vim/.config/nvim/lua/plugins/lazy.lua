@@ -32,7 +32,9 @@ local plugins = {
 	require('plugins/edit/nvim-surround'),
 	require('plugins/edit/ts-comments'),
 	require('plugins/edit/treesj'),
+	require('plugins/edit/cursorword'),
 	-- require('plugins/edit/comment'),
+	-- require('plugins/edit/lsp_signature'),
 
 	-- search
 	-- require('plugins/search/nvim-tree'),
