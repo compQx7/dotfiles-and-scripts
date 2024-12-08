@@ -1,12 +1,5 @@
 local lspconfig = require('lspconfig')
 
--- 共通のLSP設定
-local function setup_server(server_name, opts)
-    opts = opts or {}
-
-    lspconfig[server_name].setup(opts)
-end
-
 -- LSP補完のための設定
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -38,38 +31,84 @@ local on_attach = function(client, bufnr)
 	]]
 end
 
+-- 3. completion (hrsh7th/nvim-cmp)
+local cmp = require("cmp")
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "path" },
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ['<C-l>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ["<CR>"] = cmp.mapping.confirm { select = true },
+  }),
+  experimental = {
+    ghost_text = true,
+  },
+	completion = {
+		autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged },
+		keyword_length = 2,
+	},
+	performance = {
+		debounce = 200,
+	},
+})
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = "path" },
+    { name = "cmdline" },
+  },
+})
+
 -- サーバーごとの個別設定
 local servers = {
-    rust_analyzer = {
+	rust_analyzer = {
 		filetypes = { "rust" },
 		capabilities = capabilities,
 		on_attach = on_attach,
 		-- cmd = { "/usr/local/bin/rust-analyzer" },
-        settings = {
-            ["rust-analyzer"] = {
-                checkOnSave = { command = "clippy" },
-            },
-        },
-    },
-    ts_ls = {
+		settings = {
+				["rust-analyzer"] = {
+						checkOnSave = { command = "clippy" },
+				},
+		},
+	},
+	ts_ls = {
 		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 		capabilities = capabilities,
 		on_attach = on_attach,
-        settings = {
-            completions = { completeFunctionCalls = true },
-        },
-    },
-    omnisharp = {
+		settings = {
+				completions = { completeFunctionCalls = true },
+		},
+	},
+	omnisharp = {
 		filetypes = { "csharp" },
 		capabilities = capabilities,
 		on_attach = on_attach,
-        cmd = { "omnisharp" },
-        root_dir = lspconfig.util.root_pattern(".sln", ".csproj", ".git"),
-    },
+		cmd = { "omnisharp" },
+		root_dir = lspconfig.util.root_pattern(".sln", ".csproj", ".git"),
+	},
 }
 
 -- 各サーバーの設定を適用
 for server, opts in pairs(servers) do
-    setup_server(server, opts)
+    opts = opts or {}
+    lspconfig[server].setup(opts)
 end
 

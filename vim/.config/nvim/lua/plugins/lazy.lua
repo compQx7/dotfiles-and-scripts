@@ -32,6 +32,7 @@ local plugins = {
 	require('plugins/edit/nvim-surround'),
 	require('plugins/edit/ts-comments'),
 	require('plugins/edit/treesj'),
+	-- TODO: Considering other plugins. vim-illuminate
 	require('plugins/edit/cursorword'),
 	-- require('plugins/edit/comment'),
 	-- require('plugins/edit/lsp_signature'),
@@ -52,23 +53,25 @@ local plugins = {
 	require('plugins/lsp/masonlspconfig'),
 	require('plugins/lsp/nvim-cmp'),
 	require('plugins/lsp/cmp-nvim-lsp'),
-	-- require('plugins/lsp/cmp-buffer'),
+	require('plugins/lsp/cmp-buffer'),
+	require('plugins/lsp/cmp-cmdline'),
+	require('plugins/lsp/cmp-path'),
 	-- require('plugins/lsp/lspsaga'),
 	-- require({ 'L3MON4D3/LuaSnip' }),
 	-- require({ 'simrat39/rust-tools.nvim' }),
 	-- require({ 'jose-elias-alvarez/typescript.nvim' }),
 
 	-- ui
-	require('plugins/ui/barbar'),
 	require('plugins/ui/tokyonight'),
 	require('plugins/ui/indent-blankline'),
 	require('plugins/ui/lualine'),
 	require('plugins/ui/render-markdown'),
+	-- TODO: Considering other plugins.
+	require('plugins/ui/barbar'),
 
 	-- require('kevinhwang91/nvim-bqf'),
 	-- require('folke/which-key.nvim'),
 	-- require('/no-neck-pain.nvim'),
-	-- require('/lsp-signature.nvim'),
 }
 
 require('lazy').setup(plugins)

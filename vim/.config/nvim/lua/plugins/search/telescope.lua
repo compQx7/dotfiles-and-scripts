@@ -14,12 +14,15 @@ local telescope = {
 						mirror = false, -- Toggle window to top/bottom
 					},
 				},
+				path_display = function(opts, path)
+					local tail = require("telescope.utils").path_tail(path)
+					return string.format("%s (%s)", tail, path)
+				end,
 			}
 		})
 		local builtin = require('telescope.builtin')
 		vim.keymap.set('n', '<Leader>fn', builtin.find_files, { desc = 'Telescope find files' })
 		vim.keymap.set('n', '<Leader>fa', builtin.live_grep, { desc = 'Telescope live grep' })
-		vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 		vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 		vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
 
@@ -32,6 +35,22 @@ local telescope = {
 			end
 		end
 		vim.keymap.set('n', '<Leader>fd', '<cmd>lua live_grep_in_directory()<CR>', { noremap = true, silent = true })
+
+		vim.keymap.set('n', '<leader>fb', function()
+			builtin.buffers {
+				attach_mappings = function(_, map)
+					map('i', '<C-d>', function(prompt_bufnr)
+						local actions = require('telescope.actions')
+						local state = require('telescope.actions.state')
+						local selection = state.get_selected_entry()
+						actions.close(prompt_bufnr)
+						vim.cmd('bdelete ' .. selection.bufnr)
+						builtin.buffers()
+					end)
+					return true
+				end,
+			}
+		end, { desc = "Manage buffers" })
 	end,
 }
 
