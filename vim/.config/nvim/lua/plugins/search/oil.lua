@@ -9,7 +9,7 @@ local oil = {
 				preview_split = 'right',
 			},
 			keymaps = {
-				['<Leader>fd'] = {
+				['<Leader>fn'] = {
 					function()
 							require("telescope.builtin").find_files({
 									cwd = require("oil").get_current_dir()
@@ -29,7 +29,7 @@ local oil = {
 					nowait = true,
 					desc = "Find files in the current directory"
 				},
-				['<Leader>et'] = {
+				['<C-t>'] = {
 					function()
 						local curdir = require("oil").get_current_dir()
 						if curdir then
