@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	-- ai
 	require('plugins/ai/copilot'),
+	require('plugins/ai/copilot-chat'),
 
 	-- base
 	require('plugins/base/aerial'),
