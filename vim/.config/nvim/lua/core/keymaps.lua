@@ -16,7 +16,7 @@ vim.keymap.set('n', 'N', 'Nzz')
 vim.keymap.set('n', '*', '*zz')
 vim.keymap.set('n', '#', '#zz')
 
-vim.keymap.set('n', '<C-q>', '<cmd>b#<CR><cmd>bd#<CR>')
+vim.keymap.set('n', '<C-q>', '<cmd>bd<CR>')
 
 vim.keymap.set('v', 'J', '5j')
 vim.keymap.set('v', 'K', '5k')

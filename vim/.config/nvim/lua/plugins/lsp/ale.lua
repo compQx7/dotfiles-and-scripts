@@ -1,13 +1,13 @@
 local ale = {
 	'dense-analysis/ale',
-	lazy = false,
-	priority = 1000,
+	-- lazy = false,
+	-- priority = 1000,
 	config = function()
 		vim.g.ale_linters = {
-			['javascript'] = ['eslint'],
-			['typescript'] = ['eslint'],
-			['typescriptreact'] = ['eslint'],
-			['javascriptreact'] = ['eslint'],
+			javascript = {'eslint'},
+			typescript = {'eslint'},
+			typescriptreact = {'eslint'},
+			javascriptreact = {'eslint'},
 			-- ['css'] = ['stylelint'],
 			-- ['scss'] = ['stylelint'],
 			-- ['html'] = ['htmlhint'],
@@ -20,8 +20,8 @@ local ale = {
 
 		vim.g.ale_fix_on_save = 0
 		
-		vim.g.ale_sign_error = '✗'
-		vim.g.ale_sign_warning = '⚠'
+		-- vim.g.ale_sign_error = '✗'
+		-- vim.g.ale_sign_warning = '⚠'
 		vim.g.ale_sign_error = '>>'
 		vim.g.ale_sign_warning = '--'
 

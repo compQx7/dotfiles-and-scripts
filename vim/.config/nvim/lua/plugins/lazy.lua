@@ -56,6 +56,8 @@ local plugins = {
 	require('plugins/lsp/cmp-buffer'),
 	require('plugins/lsp/cmp-cmdline'),
 	require('plugins/lsp/cmp-path'),
+	-- lint
+	require('plugins/lsp/ale'),
 	-- require('plugins/lsp/lspsaga'),
 	-- require({ 'L3MON4D3/LuaSnip' }),
 	-- require({ 'simrat39/rust-tools.nvim' }),
