@@ -35,6 +35,7 @@ local plugins = {
 	require('plugins/edit/treesj'),
 	-- TODO: Considering other plugins. vim-illuminate
 	require('plugins/edit/cursorword'),
+	require('plugins/edit/ts-autotag'),
 	-- require('plugins/edit/comment'),
 	-- require('plugins/edit/lsp_signature'),
 
