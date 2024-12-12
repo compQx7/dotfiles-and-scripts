@@ -8,6 +8,7 @@ local ale = {
 			typescript = {'eslint'},
 			typescriptreact = {'eslint'},
 			javascriptreact = {'eslint'},
+			-- cs = {'omnisharp'},
 			-- ['css'] = ['stylelint'],
 			-- ['scss'] = ['stylelint'],
 			-- ['html'] = ['htmlhint'],
