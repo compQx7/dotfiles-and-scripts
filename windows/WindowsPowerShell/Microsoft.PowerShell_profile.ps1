@@ -1,6 +1,6 @@
 Set-Alias vim nvim
 
-function ghqcd {
+function repo {
     $selection = ghq list -p | peco
     if ([string]::IsNullOrWhiteSpace($selection)) {
         Write-Output "No selection made. Exiting."
@@ -9,7 +9,7 @@ function ghqcd {
     cd $selection
 }
 
-function ghqcode {
+function repocode {
     $selection = ghq list -p | peco
     if ([string]::IsNullOrWhiteSpace($selection)) {
         Write-Output "No selection made. Exiting."
@@ -18,7 +18,7 @@ function ghqcode {
     code $selection
 }
 
-function ghqnv {
+function repovi {
     $selection = ghq list -p | peco
     if ([string]::IsNullOrWhiteSpace($selection)) {
         Write-Output "No selection made. Exiting."
@@ -28,7 +28,7 @@ function ghqnv {
 	nvim .
 }
 
-function vimconf {
+function viconf {
 	cd $env:LOCALAPPDATA/nvim; vim .
 }
 
