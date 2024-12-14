@@ -2,8 +2,8 @@ local diffview = {
 	'sindrets/diffview.nvim',
 	lazy = false,
 	config = function()
-		require('diffview').setup {
-		}
+		require('diffview').setup({
+		})
 	end,
 	keys = {
 		{ mode = 'n', '<Leader>hh', '<cmd>DiffviewOpen HEAD<CR>' },
