@@ -78,8 +78,10 @@ local copilotchat = {
 		end
 
 		vim.api.nvim_set_keymap("n", "<leader>ip", "<cmd>lua ShowCopilotChatActionPrompt()<cr>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("x", "<leader>ip", "<cmd>lua ShowCopilotChatActionPrompt()<cr>", { noremap = true, silent = true })
 
 		vim.api.nvim_set_keymap("n", "<leader>io", "<cmd>CopilotChatToggle<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("x", "<leader>io", "<cmd>CopilotChatToggle<CR>", { noremap = true, silent = true })
 	end,
 }
 
