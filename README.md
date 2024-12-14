@@ -29,6 +29,7 @@ sudo apt install -y build-essential curl git
 ```
 
 Install Homebrew
+下記を実行後に Next Step にしたがって PATH を通す
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -37,7 +38,7 @@ Install Homebrew
 Install tools
 
 ```sh
-brew install neovim asdf ghq peco lazygit
+brew install neovim asdf ripgrep fd ghq peco lazygit
 ```
 
 Clone dotfiles
@@ -45,6 +46,6 @@ Clone dotfiles
 ```sh
 ghq get {compQx7/dotfiles-and-scripts}
 sudo ln -s ~/ghq/github.com/compQx7/dotfiles-and-scripts/vim/nvim ~/.config/nvim
-sudo ln -s ~/ghq/github.com/compQx7/dotfiles-and-scripts/shell/.bashrc ~/.bashrc
+sudo ln -s ~/ghq/github.com/compQx7/dotfiles-and-scripts/linux/.bashrc ~/.bashrc
 ```
 
