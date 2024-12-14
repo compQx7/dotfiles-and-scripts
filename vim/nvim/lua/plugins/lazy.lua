@@ -66,7 +66,10 @@ local plugins = {
 	-- require({ 'jose-elias-alvarez/typescript.nvim' }),
 
 	-- ui
-	require('plugins/ui/tokyonight'),
+	-- require('plugins/ui/tokyonight'),
+	require('plugins/ui/nightfox'),
+	-- require('plugins/ui/kanagawa'),
+
 	require('plugins/ui/indent-blankline'),
 	require('plugins/ui/lualine'),
 	require('plugins/ui/render-markdown'),
