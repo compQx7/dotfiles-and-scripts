@@ -24,6 +24,7 @@ local plugins = {
 	require('plugins/base/toggleterm'),
 	require('plugins/base/treesitter'),
 	require('plugins/base/fidget'),
+	require('plugins/base/autosession'),
 	-- require('plugins/base/overseer'),
 
 	-- edit

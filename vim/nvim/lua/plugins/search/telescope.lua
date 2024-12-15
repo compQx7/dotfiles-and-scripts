@@ -6,18 +6,38 @@ local telescope = {
 	},
 	config = function()
 		require('telescope').setup({
-			defaults = {
-				layout_strategy = "vertical",
-				layout_config = {
-					preview_height = 0.5,
-					vertical = {
-						mirror = false, -- Toggle window to top/bottom
+			pickers = {
+				find_files = {
+					layout_strategy = "vertical",
+					layout_config = {
+						preview_height = 0.5,
+						vertical = {
+							mirror = false, -- Toggle window to top/bottom
+						},
+					},
+					path_display = function(opts, path)
+						local tail = require("telescope.utils").path_tail(path)
+						return string.format("%s (%s)", tail, path)
+					end,
+				},
+				live_grep = {
+					layout_strategy = "vertical",
+					layout_config = {
+						preview_height = 0.5,
+						vertical = {
+							mirror = false, -- Toggle window to top/bottom
+						},
 					},
 				},
-				path_display = function(opts, path)
-					local tail = require("telescope.utils").path_tail(path)
-					return string.format("%s (%s)", tail, path)
-				end,
+				current_buffer_fuzzy_find = {
+					layout_strategy = "vertical",
+					layout_config = {
+						preview_height = 0.5,
+						vertical = {
+							mirror = false, -- Toggle window to top/bottom
+						},
+					},
+				},
 			}
 		})
 		local builtin = require('telescope.builtin')
@@ -25,6 +45,8 @@ local telescope = {
 		vim.keymap.set('n', '<Leader>fa', builtin.live_grep, { desc = 'Telescope live grep' })
 		vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 		vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
+		vim.keymap.set('n', '<Leader>fgc', '<cmd>Telescope git_commits<CR>')
+		vim.keymap.set('n', '<Leader>fgs', '<cmd>Telescope git_status<CR>')
 
 		function _G.live_grep_in_directory()
 			local directory_path = vim.fn.input('Search path: ', '', 'file')

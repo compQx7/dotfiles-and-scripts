@@ -17,7 +17,8 @@ local toggleterm = {
 			cmd = "lazygit",
 			hidden = true,
 			on_open = function(term)
-				vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<Leader>tg", "<Cmd>close<CR>", { noremap = true, silent = true })
+				-- vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<Leader>tg", "<Cmd>close<CR>", { noremap = true, silent = true })
+				vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-t>", "<Cmd>close<CR>", { noremap = true, silent = true })
 			end,
 		})
 
