@@ -22,23 +22,34 @@ end
 
 -- 3. completion (hrsh7th/nvim-cmp)
 local cmp = require("cmp")
+local types = require('cmp.types')
+-- TODO: What is this setting?
+-- vim.opt.completeopt = { "menu", "menuone", "noselect" }
 cmp.setup({
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
+      -- require('luasnop').lsp_expand(args.body)
     end,
   },
-  sources = {
+  sources = cmp.config.sources({
     { name = "nvim_lsp" },
+		-- { name = "nvim_lua" },
+		-- { name = "luasnop" },
+	}, {
     { name = "buffer" },
     { name = "path" },
-  },
+  }),
   mapping = cmp.mapping.preset.insert({
+		['<Tab>'] = cmp.mapping.select_next_item({ behavior = types.cmp.SelectBehavior.Insert }),
+		['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = types.cmp.SelectBehavior.Insert }),
+		["<C-b>"] = cmp.mapping.scroll_docs(-5),
+		["<C-f>"] = cmp.mapping.scroll_docs(5),
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
-    -- ['<C-l>'] = cmp.mapping.complete(),
+    -- ['<C-.>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    -- ["<CR>"] = cmp.mapping.confirm { select = true },
+    ["<CR>"] = cmp.mapping.confirm { select = true },
   }),
   experimental = {
     ghost_text = true,
