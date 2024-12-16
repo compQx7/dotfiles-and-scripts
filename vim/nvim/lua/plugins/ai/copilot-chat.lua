@@ -7,11 +7,30 @@ local copilotchat = {
 	config = function()
 		local select = require("CopilotChat.select")
 		require("CopilotChat").setup({
-			debug = true,
+			debug = false,
 
 			window = {
 				layout = "float",
 				relative = "editor",
+				width = 0.8,
+				height = 0.8,
+			},
+      mappings = {
+        complete = {
+          insert = '<Tab>',
+        },
+        close = {
+          normal = 'q',
+          insert = '<C-c>',
+        },
+        reset = {
+          normal = '<C-l>',
+          insert = '<C-l>',
+        },
+        submit_prompt = {
+          normal = '<CR>',
+          insert = '<C-s>',
+        },
 			},
 			prompts = {
 				Explain = {
@@ -25,7 +44,7 @@ local copilotchat = {
 					prompt = "/COPILOT_FIX このコードには問題があります。バグを修正したコードに書き直してください。",
 				},
 				Refactor = {
-					prompt = "/COPILOT_GENERATE 明瞭性と可読性を向上させるために、次のコードをリファクタリングしてください。日本語で返答ください。",
+					prompt = "/COPILOT_GENERATE 拡張性と可読性を向上させるために、次のコードをリファクタリングしてください。日本語で返答ください。",
 				},
 				Optimize = {
 					prompt = "/COPILOT_REFACTOR 選択したコードを最適化し、パフォーマンスと可読性を向上させてください。説明は猫になりきって日本語でお願いします。",
