@@ -3,17 +3,20 @@
 - WSL2設定
 - log repository を分離
 
-- telescope の検索結果を再度見たい
-  - resume を利用した関数を作成し、デフォルトでキャッシュを利用するように変更
+- Telescope
+  - hit件数は知りたい
+  - entension の調査
+  - quickfixとの連携
+  - fzf との連携リベンジ
+  - telescope-file-browser
+    - oil と比較（追加・削除、異動、コピーしやすいか、rename が lsp に対応しているか）
 
 - lazygit では`<Leader>to`に反応しないようにしたい
   - 通常のターミナルでのみにしたい
   - 現状`<C-t>`によるindentが効かない
 - toggle-term のトグルショートカット
   - 現状`<C-t>`に割り当てているため、insertモードでindentが効かない
-  - `<Plug>(xxx)`名前空間で解決できる？
-
-- copilot のtab補完がうっとうしい？
+  - `<Plug>(xxx)`, `<Nop>`で名前空間で解決できる？
 
 - js環境
   - import をコードアクションで補完したい
@@ -35,10 +38,9 @@
 - quickfix の活用
 - window separate の活用
 
-- optionの調査
+- 調査
   - diffview
-  - telescope
-    - git 検索
+    - 見やすさの向上
 
 - git workflow
   - DiffviewXxxx
