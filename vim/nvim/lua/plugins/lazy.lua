@@ -25,6 +25,7 @@ local plugins = {
 	require('plugins/base/treesitter'),
 	require('plugins/base/fidget'),
 	require('plugins/base/autosession'),
+	require('plugins/base/bufferline'),
 	-- require('plugins/base/overseer'),
 
 	-- edit
@@ -75,8 +76,6 @@ local plugins = {
 	require('plugins/ui/indent-blankline'),
 	require('plugins/ui/lualine'),
 	require('plugins/ui/render-markdown'),
-	-- TODO: Considering other plugins.
-	require('plugins/ui/barbar'),
 
 	-- quickfix でプレビューできる
 	-- require('kevinhwang91/nvim-bqf'),
