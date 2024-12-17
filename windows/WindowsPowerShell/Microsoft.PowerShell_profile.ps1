@@ -1,4 +1,5 @@
 Set-Alias vim nvim
+Set-Alias make mingw32-make
 
 function repo {
     $selection = ghq list -p | peco

@@ -4,12 +4,12 @@
 - log repository を分離
 
 - Telescope
-  - hit件数は知りたい
-  - entension の調査
   - quickfixとの連携
-  - fzf との連携リベンジ
-  - telescope-file-browser
-    - oil と比較（追加・削除、異動、コピーしやすいか、rename が lsp に対応しているか）
+  - hit件数は知りたい
+  - incremental selection だかなんだか
+  - entension の調査
+    - telescope-file-browser
+      - oil と比較（追加・削除、異動、コピーしやすいか、rename が lsp に対応しているか）
 
 - lazygit では`<Leader>to`に反応しないようにしたい
   - 通常のターミナルでのみにしたい

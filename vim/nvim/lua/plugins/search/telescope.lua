@@ -3,7 +3,7 @@ verticalLayout1 = {
 	layout_config = {
 		preview_height = 0.5,
 		vertical = {
-			mirror = false, -- Toggle window to top/bottom
+			mirror = true, -- Toggle window to top/bottom
 		},
 	},
 }
@@ -12,13 +12,14 @@ verticalLayout2 = {
 	layout_config = {
 		preview_height = 0.5,
 		vertical = {
-			mirror = false, -- Toggle window to top/bottom
+			mirror = true, -- Toggle window to top/bottom
 		},
 	},
-	path_display = function(opts, path)
-		local tail = require("telescope.utils").path_tail(path)
-		return string.format("%s (%s)", tail, path)
-	end,
+	path_display = 'smart',
+	-- path_display = function(opts, path)
+	-- 	local tail = require("telescope.utils").path_tail(path)
+	-- 	return string.format("%s (%s)", tail, path)
+	-- end,
 }
 
 local telescope = {
@@ -32,11 +33,12 @@ local telescope = {
 			defaults = {
 				layout_strategy = "vertical",
 				cache_picker = {
-					num_pickers = 10,
+					num_pickers = 1,
 				},
 				file_ignore_patterns = {
-					'.git',
-					'.cache',
+					-- TODO: escape の記法はこれで良い？
+					'^.git',
+					-- '.cache',
 					'node_modules',
 				},
 				vim_grep_arguments = {
@@ -57,16 +59,18 @@ local telescope = {
 				buffers = verticalLayout2,
 			},
 			extensions = {
-				-- fzf = {
-				-- 	fuzzy = true,
-				-- 	override_generic_sorter = true,
-				-- 	override_file_sorter = true,
-				-- 	case_mode = "smart_case",
-				-- },
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case",
+				},
 			},
 		})
+		require('telescope').load_extension('fzf')
+
 		local builtin = require('telescope.builtin')
-		vim.keymap.set('n', '<Leader>fN', builtin.find_files, { desc = 'Telescope find files' })
+		vim.keymap.set('n', '<Leader>fn', builtin.find_files, { desc = 'Telescope find files' })
 		vim.keymap.set('n', '<Leader>fa', builtin.live_grep, { desc = 'Telescope live grep' })
 		vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 		vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
@@ -94,7 +98,6 @@ local telescope = {
 				builtin.find_files()
 			end
 		end
-		vim.keymap.set('n', '<Leader>fn', '<cmd>lua find_files_or_resume()<CR>', { noremap = true, silent = true })
 
 		function _G.live_grep_in_directory()
 			local directory_path = vim.fn.input('Search path: ', '', 'file')

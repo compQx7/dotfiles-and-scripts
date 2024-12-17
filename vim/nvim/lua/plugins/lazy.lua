@@ -44,6 +44,7 @@ local plugins = {
 	-- require('plugins/search/nvim-tree'),
 	require('plugins/search/oil'),
 	require('plugins/search/telescope'),
+	require('plugins/search/fzf'),
 
 	-- git
 	require('plugins/git/diffview'),
@@ -77,6 +78,7 @@ local plugins = {
 	-- TODO: Considering other plugins.
 	require('plugins/ui/barbar'),
 
+	-- quickfix でプレビューできる
 	-- require('kevinhwang91/nvim-bqf'),
 	-- require('folke/which-key.nvim'),
 	-- require('/no-neck-pain.nvim'),
