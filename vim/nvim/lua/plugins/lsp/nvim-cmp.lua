@@ -7,8 +7,7 @@ local nvimcmp = {
 	-- 	-- 'hrsh7th/cmp-nvim-lua',
 	-- 	-- 'hrsh7th/cmp-vsnip',
 	-- },
-	lazy = false,
-	priority = 1000,
+	event = {'InsertEnter'},
 	-- config = function()
 	-- 	require('cmp').setup({
 	-- 		mapping = cmp.mapping.preset.insert({

@@ -31,7 +31,9 @@ diff the current file with the last commit.
 go to current directory.
 `_`
 
-## lazygit
+## git
+
+### lazygit
 
 In files
 

@@ -1,7 +1,6 @@
 local ale = {
 	'dense-analysis/ale',
-	-- lazy = false,
-	-- priority = 1000,
+	event = {'BufRead', 'BufNewFile'},
 	config = function()
 		vim.g.ale_linters = {
 			javascript = {'eslint'},

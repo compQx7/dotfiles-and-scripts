@@ -7,7 +7,9 @@ local aerial = {
 	config = function()
 		require('aerial').setup({})
 	end,
-	vim.keymap.set("n", "<leader>to", "<cmd>AerialToggle!<CR>", { desc = 'Aerial toggle' })
+	vim.keymap.set("n", "<leader>oo", "<cmd>AerialToggle!<CR>", { desc = 'Aerial toggle' }),
+	vim.keymap.set("n", "<leader>on", "<cmd>AerialNext<CR>", { desc = '' }),
+	vim.keymap.set("n", "<leader>op", "<cmd>AerialPrev<CR>", { desc = '' }),
 }
 
 return aerial
