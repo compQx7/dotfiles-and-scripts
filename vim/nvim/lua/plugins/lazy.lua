@@ -43,8 +43,9 @@ local plugins = {
 
 	-- search
 	-- require('plugins/search/nvim-tree'),
-	require('plugins/search/oil'),
+	-- require('plugins/search/oil'),
 	require('plugins/search/telescope'),
+	require('plugins/search/telescope-file-browser'),
 	require('plugins/search/fzf'),
 
 	-- git
