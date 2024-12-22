@@ -60,11 +60,11 @@ local oil = {
 			},
 		})
 
-		vim.keymap.set("n", "<Space>eo", function()
+		vim.keymap.set("n", "<Space>fe", function()
 			-- require("oil").toggle_float()
 			require("oil").open()
 		end, { desc = "Oil current buffer's directory" })
-		vim.keymap.set("n", "<Space>ec", function()
+		vim.keymap.set("n", "<Space>fE", function()
 			require("oil").open(".")
 		end, { desc = "Oil ." })
 	end,

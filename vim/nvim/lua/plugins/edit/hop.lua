@@ -1,5 +1,5 @@
 local hop = {
-	'phaazon/hop.nvim',
+	'smoka7/hop.nvim',
 	branch = 'v2',
 	config = function()
 		require('hop').setup({
@@ -7,7 +7,8 @@ local hop = {
 		})
 	end,
 	keys = {
-		{ mode = 'n', 's', '<cmd>HopChar2<CR>' },
+		{ mode = { 'n', 'x' }, 's', '<cmd>HopChar2<CR>' },
+		{ mode = { 'n', 'x' }, 'S', '<cmd>HopLineStart<CR>' },
 	}
 }
 

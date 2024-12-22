@@ -20,6 +20,8 @@
 
 - Git環境
   - 数コミット前からの変更を左側に表示したい
+    - Gitsigns の changebase が巨大リポジトリでうまくいかない
+      - diffview も同様
   - プレビューを見やすくできないか、diffviewでなんとかするか、diffview少し遅いのが気になる
 
 - プロジェクトごとに追加プラグインや追加設定ができると良い
@@ -66,7 +68,6 @@
 
 ## plugin
 
-- hop から移行 smoka7/hop.nvim
 - cssの色表現 norcalli/nvim-colorizer.lua
 - 折り畳みを見やすく anuvyklack/pretty-fold.nvim
 - 折り畳みを開かずプレビュー anuvyklack/fold-preview.nvim

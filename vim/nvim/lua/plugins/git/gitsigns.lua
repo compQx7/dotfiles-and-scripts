@@ -1,6 +1,7 @@
 local gitsigns = {
 	'lewis6991/gitsigns.nvim',
-	event = { 'BufRead', 'BufNewFile' },
+	-- event = { 'BufRead', 'BufNewFile' },
+	lazy = false,
 	config = function()
 		require('gitsigns').setup {
 			signs = {

@@ -33,20 +33,21 @@ local plugins = {
 	require('plugins/edit/dial'),
 	require('plugins/edit/hop'),
 	require('plugins/edit/nvim-surround'),
-	require('plugins/edit/ts-comments'),
 	require('plugins/edit/treesj'),
 	-- TODO: Considering other plugins. vim-illuminate
 	require('plugins/edit/cursorword'),
+
+	require('plugins/edit/ts-comments'),
 	require('plugins/edit/ts-autotag'),
 	-- require('plugins/edit/comment'),
 	-- require('plugins/edit/lsp_signature'),
 
 	-- search
 	-- require('plugins/search/nvim-tree'),
-	-- require('plugins/search/oil'),
+	require('plugins/search/oil'),
 	require('plugins/search/telescope'),
-	require('plugins/search/telescope-file-browser'),
-	require('plugins/search/fzf'),
+	-- require('plugins/search/telescope-file-browser'),
+	-- require('plugins/search/fzf'),
 
 	-- git
 	require('plugins/git/diffview'),
@@ -81,7 +82,6 @@ local plugins = {
 	-- quickfix でプレビューできる
 	-- require('kevinhwang91/nvim-bqf'),
 	-- require('folke/which-key.nvim'),
-	-- require('/no-neck-pain.nvim'),
 }
 
 require('lazy').setup(plugins)

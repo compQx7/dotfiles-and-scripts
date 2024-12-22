@@ -1,5 +1,6 @@
 local toggleterm = {
 	'akinsho/toggleterm.nvim',
+	lazy = false,
 	config = function()
 		require('toggleterm').setup({
 			-- open_mapping = [[<Leader>to]],
