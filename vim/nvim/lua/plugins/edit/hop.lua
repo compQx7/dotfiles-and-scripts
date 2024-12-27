@@ -8,7 +8,7 @@ local hop = {
 	end,
 	keys = {
 		{ mode = { 'n', 'x' }, 's', '<cmd>HopChar2<CR>' },
-		{ mode = { 'n', 'x' }, 'S', '<cmd>HopLineStart<CR>' },
+		{ mode = { 'n' }, 'S', '<cmd>HopLineStart<CR>' },
 	}
 }
 

@@ -47,7 +47,6 @@ local plugins = {
 	require('plugins/search/oil'),
 	require('plugins/search/telescope'),
 	-- require('plugins/search/telescope-file-browser'),
-	-- require('plugins/search/fzf'),
 
 	-- git
 	require('plugins/git/diffview'),

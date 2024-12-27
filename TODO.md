@@ -3,22 +3,24 @@
 - WSL2設定
 - log repository を分離
 
+- lazygit を dotfiles に入れる
+- ステータスラインにプロジェクトルートからのパスを表示したい
+- ファイラー上でパスをコピーしたい
+
 - Telescope
   - quickfixとの連携
   - hit件数は知りたい
-  - incremental selection だかなんだか
+  - incremental selection だかなんだか(treesitter?)
   - entension の調査
     - telescope-file-browser
       - oil と比較（追加・削除、異動、コピーしやすいか、rename が lsp に対応しているか）
 
-- lazygit では`<Leader>to`に反応しないようにしたい
-  - 通常のターミナルでのみにしたい
-  - 現状`<C-t>`によるindentが効かない
 - toggle-term のトグルショートカット
   - 現状`<C-t>`に割り当てているため、insertモードでindentが効かない
   - `<Plug>(xxx)`, `<Nop>`で名前空間で解決できる？
 
 - Git環境
+  - vscode git graph のように複数ブランチの動きや進んでいるリモートブランチを把握したい
   - 数コミット前からの変更を左側に表示したい
     - Gitsigns の changebase が巨大リポジトリでうまくいかない
       - diffview も同様

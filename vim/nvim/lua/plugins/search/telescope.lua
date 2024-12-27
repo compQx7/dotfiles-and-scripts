@@ -17,11 +17,31 @@ verticalLayout2 = {
 			mirror = true, -- Toggle window to top/bottom
 		},
 	},
-	-- path_display = 'smart',
-	path_display = function(opts, path)
-		local tail = require("telescope.utils").path_tail(path)
-		return string.format("%s (%s)", tail, path)
-	end,
+	file_ignore_patterns = {
+		-- TODO: escape の記法はこれで良い？
+		'^.git',
+		-- '.cache',
+		'node_modules',
+	},
+	vim_grep_arguments = {
+		'rg',
+		'--color=never',
+		'--no-heading',
+		'--with-filename',
+		'--line-number',
+		'--column',
+		'--smart-case',
+		'-uu',
+	},
+	path_display = {
+		filename_first = {
+			reverse_directories = true,
+		},
+	},
+	-- path_display = function(opts, path)
+	-- 	local tail = require("telescope.utils").path_tail(path)
+	-- 	return string.format("%s (%s)", tail, path)
+	-- end,
 }
 
 local telescope = {
@@ -29,31 +49,19 @@ local telescope = {
 	branch = '0.1.x',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
+		{
+			'nvim-telescope/telescope-fzf-native.nvim',
+			build = 'make',
+		},
 	},
-	-- cmd = 'Telescope',
-	lazy = false,
+	cmd = 'Telescope',
+	-- lazy = false,
 	config = function()
 		require('telescope').setup({
 			defaults = {
 				layout_strategy = "vertical",
 				-- cache_picker = {
 				-- 	num_pickers = 1,
-				-- },
-				file_ignore_patterns = {
-					-- TODO: escape の記法はこれで良い？
-					'^.git',
-					-- '.cache',
-					'node_modules',
-				},
-				-- vim_grep_arguments = {
-				-- 	'rg',
-				-- 	-- '--color=never',
-				-- 	-- '--no-heading',
-				-- 	'--with-filename',
-				-- 	'--line-number',
-				-- 	'--column',
-				-- 	'--smart-case',
-				-- 	'-uu',
 				-- },
 			},
 			pickers = {
@@ -62,13 +70,13 @@ local telescope = {
 				current_buffer_fuzzy_find = verticalLayout1,
 				buffers = verticalLayout2,
 			},
-			-- extensions = {
-			-- 	fzf = {
-			-- 		fuzzy = true,
-			-- 		override_generic_sorter = true,
-			-- 		override_file_sorter = true,
-			-- 		case_mode = "smart_case",
-			-- 	},
+			extensions = {
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case",
+				},
 			-- 	file_browser = {
 			-- 		theme = "ivy",
 			-- 		-- disables netrw and use telescope-file-browser in its place
@@ -84,10 +92,10 @@ local telescope = {
 			-- 			},
 			-- 		},
 			-- 	},
-			-- },
+			},
 		})
 		-- require("telescope").load_extension("file_browser")
-		-- require('telescope').load_extension('fzf')
+		require('telescope').load_extension('fzf')
 
 		local builtin = require('telescope.builtin')
 		vim.keymap.set('n', '<Leader>fn', builtin.find_files, { desc = 'Telescope find files' })
@@ -96,6 +104,7 @@ local telescope = {
 		vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 		vim.keymap.set('n', '<Leader>fm', builtin.marks, { desc = 'Telescope marks' })
 		vim.keymap.set('n', '<Leader>f:', builtin.command_history, { desc = '' })
+		vim.keymap.set('n', '<Leader>fs', builtin.symbols, { desc = '' })
 		vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
 		vim.keymap.set('n', '<Leader>fgc', '<cmd>Telescope git_commits<CR>')
 		vim.keymap.set('n', '<Leader>fgs', '<cmd>Telescope git_status<CR>')
