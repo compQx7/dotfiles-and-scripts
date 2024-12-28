@@ -1,4 +1,4 @@
-verticalLayout1 = {
+VerticalLayout1 = {
 	layout_strategy = "vertical",
 	layout_config = {
 		height = 0.99,
@@ -8,7 +8,7 @@ verticalLayout1 = {
 		},
 	},
 }
-verticalLayout2 = {
+VerticalLayout2 = {
 	layout_strategy = "vertical",
 	layout_config = {
 		height = 0.99,
@@ -53,6 +53,7 @@ local telescope = {
 			'nvim-telescope/telescope-fzf-native.nvim',
 			build = 'make',
 		},
+		-- 'nvim-telescope/telescope-file-browser.nvim',
 	},
 	cmd = 'Telescope',
 	-- lazy = false,
@@ -65,10 +66,10 @@ local telescope = {
 				-- },
 			},
 			pickers = {
-				find_files = verticalLayout2,
-				live_grep = verticalLayout1,
-				current_buffer_fuzzy_find = verticalLayout1,
-				buffers = verticalLayout2,
+				find_files = VerticalLayout2,
+				live_grep = VerticalLayout1,
+				current_buffer_fuzzy_find = VerticalLayout1,
+				buffers = VerticalLayout2,
 			},
 			extensions = {
 				fzf = {

@@ -1,6 +1,6 @@
 local hop = {
 	'smoka7/hop.nvim',
-	branch = 'v2',
+	-- branch = 'v2',
 	config = function()
 		require('hop').setup({
 			multi_windows = true,

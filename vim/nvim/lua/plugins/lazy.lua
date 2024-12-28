@@ -26,6 +26,9 @@ local plugins = {
 	require('plugins/base/fidget'),
 	require('plugins/base/autosession'),
 	require('plugins/base/bufferline'),
+	require('plugins/base/telescope'),
+	require('plugins/base/oil'),
+	-- require('plugins/base/nvim-tree'),
 	-- require('plugins/base/overseer'),
 
 	-- edit
@@ -42,30 +45,16 @@ local plugins = {
 	-- require('plugins/edit/comment'),
 	-- require('plugins/edit/lsp_signature'),
 
-	-- search
-	-- require('plugins/search/nvim-tree'),
-	require('plugins/search/oil'),
-	require('plugins/search/telescope'),
-	-- require('plugins/search/telescope-file-browser'),
-
 	-- git
 	require('plugins/git/diffview'),
 	require('plugins/git/gitsigns'),
 
 	-- lsp
-	-- require('plugins/lsp'),
 	require('plugins/lsp/lspconfig'),
-	require('plugins/lsp/mason'),
-	require('plugins/lsp/masonlspconfig'),
 	require('plugins/lsp/nvim-cmp'),
-	require('plugins/lsp/cmp-nvim-lsp'),
-	require('plugins/lsp/cmp-buffer'),
-	require('plugins/lsp/cmp-cmdline'),
-	require('plugins/lsp/cmp-path'),
 	-- lint
 	require('plugins/lsp/ale'),
 	-- require('plugins/lsp/lspsaga'),
-	-- require({ 'L3MON4D3/LuaSnip' }),
 	-- require({ 'simrat39/rust-tools.nvim' }),
 	-- require({ 'jose-elias-alvarez/typescript.nvim' }),
 
