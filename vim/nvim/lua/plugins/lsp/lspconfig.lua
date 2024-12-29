@@ -50,9 +50,9 @@ local lspconfig = {
 				on_attach = on_attach,
 				-- cmd = { "/usr/local/bin/rust-analyzer" },
 				settings = {
-						["rust-analyzer"] = {
-								checkOnSave = { command = "clippy" },
-						},
+						-- ["rust-analyzer"] = {
+						-- 		checkOnSave = { command = "clippy" },
+						-- },
 				},
 			},
 			ts_ls = {

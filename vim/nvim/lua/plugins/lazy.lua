@@ -29,7 +29,9 @@ local plugins = {
 	require('plugins/base/telescope'),
 	require('plugins/base/oil'),
 	-- require('plugins/base/nvim-tree'),
-	-- require('plugins/base/overseer'),
+	require('plugins/base/overseer'),
+	require('plugins/base/nvim-notify'),
+	require('plugins/base/nvim-bqf'),
 
 	-- edit
 	require('plugins/edit/autopairs'),
@@ -37,13 +39,10 @@ local plugins = {
 	require('plugins/edit/hop'),
 	require('plugins/edit/nvim-surround'),
 	require('plugins/edit/treesj'),
-	-- TODO: Considering other plugins. vim-illuminate
 	require('plugins/edit/cursorword'),
 
 	require('plugins/edit/ts-comments'),
 	require('plugins/edit/ts-autotag'),
-	-- require('plugins/edit/comment'),
-	-- require('plugins/edit/lsp_signature'),
 
 	-- git
 	require('plugins/git/diffview'),
@@ -52,9 +51,11 @@ local plugins = {
 	-- lsp
 	require('plugins/lsp/lspconfig'),
 	require('plugins/lsp/nvim-cmp'),
+	require('plugins/lsp/lsp-signature'),
+	require('plugins/lsp/lsp-saga'),
 	-- lint
 	require('plugins/lsp/ale'),
-	-- require('plugins/lsp/lspsaga'),
+
 	-- require({ 'simrat39/rust-tools.nvim' }),
 	-- require({ 'jose-elias-alvarez/typescript.nvim' }),
 
@@ -67,8 +68,6 @@ local plugins = {
 	require('plugins/ui/lualine'),
 	require('plugins/ui/render-markdown'),
 
-	-- quickfix でプレビューできる
-	-- require('kevinhwang91/nvim-bqf'),
 	-- require('folke/which-key.nvim'),
 }
 
