@@ -78,6 +78,7 @@ local telescope = {
 					override_file_sorter = true,
 					case_mode = "smart_case",
 				},
+			-- oilと比較（追加・削除、移動・コピーしやすいか、lsp対応のカスタマイズが必要）
 			-- 	file_browser = {
 			-- 		theme = "ivy",
 			-- 		-- disables netrw and use telescope-file-browser in its place
@@ -106,6 +107,8 @@ local telescope = {
 		vim.keymap.set('n', '<Leader>fm', builtin.marks, { desc = 'Telescope marks' })
 		vim.keymap.set('n', '<Leader>f:', builtin.command_history, { desc = '' })
 		vim.keymap.set('n', '<Leader>fs', builtin.symbols, { desc = '' })
+		vim.keymap.set('n', '<Leader>fq', builtin.quickfixhistory, { desc = '' })
+		vim.keymap.set('n', '<Leader>fd', builtin.diagnostics, { desc = '' })
 		vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
 		vim.keymap.set('n', '<Leader>fgc', '<cmd>Telescope git_commits<CR>')
 		vim.keymap.set('n', '<Leader>fgs', '<cmd>Telescope git_status<CR>')

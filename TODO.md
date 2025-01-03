@@ -1,19 +1,10 @@
 # TODO
 
+- show be manage in the dotfiles
+  - rename repository to dotfiles
+
 - WSL2設定
 - log repository を分離
-
-- lazygit を dotfiles に入れる
-- ステータスラインにプロジェクトルートからのパスを表示したい
-- ファイラー上でパスをコピーしたい
-
-- Telescope
-  - quickfixとの連携
-  - hit件数は知りたい
-  - incremental selection だかなんだか(treesitter?)
-  - entension の調査
-    - telescope-file-browser
-      - oil と比較（追加・削除、異動、コピーしやすいか、rename が lsp に対応しているか）
 
 - toggle-term のトグルショートカット
   - 現状`<C-t>`に割り当てているため、insertモードでindentが効かない
@@ -40,10 +31,8 @@
 - js環境
   - import をコードアクションで補完したい
   - jestのテストを個別に実行したい
-    - neovim のテスト系プラグインでできそう
   - フロントエンド用の設定を on/off できるようにしたい
 - プロジェクト全体での置換
-- vscodeのようにコミット履歴を見やすくしたい
 - 汎用的なdiffを見たい。.diffファイルを開けないか。
 
 - Ghost text (like Rust)

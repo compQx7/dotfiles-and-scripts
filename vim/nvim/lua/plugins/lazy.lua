@@ -51,8 +51,11 @@ local plugins = {
 	-- lsp
 	require('plugins/lsp/lspconfig'),
 	require('plugins/lsp/nvim-cmp'),
+	-- require('plugins/lsp/nvim-dap'),
 	require('plugins/lsp/lsp-signature'),
 	require('plugins/lsp/lsp-saga'),
+	-- require('plugins/lsp/neotest'),
+	-- require('plugins/lsp/vimtest'),
 	-- lint
 	require('plugins/lsp/ale'),
 

@@ -22,6 +22,9 @@ vim.keymap.set('n', '*', '*zz')
 vim.keymap.set('n', '#', '#zz')
 vim.keymap.set('n', '<Leader>/', ':noh<CR>')
 
+vim.keymap.set('n', ']q', ':cnext<CR>')
+vim.keymap.set('n', '[q', ':cprev<CR>')
+
 vim.keymap.set('n', '<C-p>', ':bp<CR>')
 vim.keymap.set('n', '<C-n>', ':bn<CR>')
 vim.keymap.set('n', '<C-q>', '<cmd>bd<CR>')

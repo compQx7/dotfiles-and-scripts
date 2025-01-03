@@ -51,6 +51,15 @@ local treesitter = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
 			},
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "gnn",
+					scope_incremental = "gns",
+					node_incremental = "+",
+					node_decremental = "-",
+				}
+			},
 		})
 	end,
 }

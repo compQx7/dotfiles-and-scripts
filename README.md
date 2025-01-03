@@ -16,6 +16,13 @@ mklink /d %USERPROFILE%\AppData\Local\nvim %USERPROFILE%\ghq\github.com\compQx7\
 mklink /d %USERPROFILE%\Documents\WindowsPowerShell %USERPROFILE%\ghq\github.com\compQx7\dotfiles-and-scripts\windows\WindowsPowerShell
 ```
 
+### other
+
+lazygit
+```sh
+mklink /d %USERPROFILE%\AppData\Local\lazygit %USERPROFILE%\ghq\github.com\compQx7\dotfiles-and-scripts\git\lazygit\
+```
+
 ## Linux
 
 ### NeoVim
