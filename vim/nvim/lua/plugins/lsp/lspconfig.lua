@@ -35,10 +35,11 @@ local lspconfig = {
 			vim.keymap.set('n', '<Leader>ar', vim.lsp.buf.rename, bufopts)
 			vim.keymap.set('n', '<Leader>aa', vim.lsp.buf.code_action, bufopts)
 			vim.keymap.set('n', '<Leader>ae', vim.diagnostic.open_float, bufopts)
-			vim.keymap.set('n', '<Leader>g]', vim.diagnostic.goto_next, bufopts)
-			vim.keymap.set('n', '<Leader>g[', vim.diagnostic.goto_prev, bufopts)
+			vim.keymap.set('n', ']g', vim.diagnostic.goto_next, bufopts)
+			vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, bufopts)
 			vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-				vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
+				vim.lsp.diagnostic.on_publish_diagnostics,
+				{ virtual_text = false }
 			)
 		end
 
