@@ -1,5 +1,8 @@
 local autosession = {
 	'rmagatti/auto-session',
+	dependencies = {
+		'nvim-telescope/telescope.nvim',
+	},
 	lazy = false,
 	config = function()
 		require('auto-session').setup({
@@ -25,11 +28,6 @@ local autosession = {
 			},
 		})
 	end,
-	keys = {
-		-- Will use Telescope if installed or a vim.ui.select picker otherwise
-		{ '<leader>fw', '<cmd>SessionSearch<CR>', desc = 'Session search' },
-		{ '<leader>ws', '<cmd>SessionSave<CR>', desc = 'Save session' },
-	},
 }
 
 return autosession

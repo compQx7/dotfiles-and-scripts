@@ -99,23 +99,6 @@ local telescope = {
 		-- require("telescope").load_extension("file_browser")
 		require('telescope').load_extension('fzf')
 
-		local builtin = require('telescope.builtin')
-		vim.keymap.set('n', '<Leader>fn', builtin.find_files, { desc = 'Telescope find files' })
-		vim.keymap.set('n', '<Leader>fa', builtin.live_grep, { desc = 'Telescope live grep' })
-		vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-		vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-		vim.keymap.set('n', '<Leader>fm', builtin.marks, { desc = 'Telescope marks' })
-		vim.keymap.set('n', '<Leader>f:', builtin.command_history, { desc = '' })
-		vim.keymap.set('n', '<Leader>fs', builtin.symbols, { desc = '' })
-		vim.keymap.set('n', '<Leader>fq', builtin.quickfixhistory, { desc = '' })
-		vim.keymap.set('n', '<Leader>fd', builtin.diagnostics, { desc = '' })
-		vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
-		vim.keymap.set('n', '<Leader>fgc', '<cmd>Telescope git_commits<CR>')
-		vim.keymap.set('n', '<Leader>fgs', '<cmd>Telescope git_status<CR>')
-		vim.keymap.set('n', '<Leader>fr', '<cmd>Telescope resume<CR>')
-		-- vim.keymap.set('n', '<Leader>fE', ':Telescope file_browser<CR>')
-		-- vim.keymap.set('n', '<Leader>fe', ':Telescope file_browser path=%:p:h select_buffer=true<CR>')
-
 		-- local function myresume(picker_title)
 		-- 	local cached_pickers = require('telescope.state').get_global_key('cached_pickers')
 		-- 	if not cached_pickers then
