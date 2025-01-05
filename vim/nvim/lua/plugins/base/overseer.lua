@@ -5,10 +5,13 @@ local plug = {
 	-- 	'nvim-telescope/telescope.nvim',
 	-- },
 	config = function()
-		require('overseer').setup({
+		local overseer = require("overseer")
+		local find_file_path = require('utils').find_file_path
+
+		overseer.setup({
 			templates = { 'builtin' }
 		})
-		local overseer = require("overseer")
+
 		overseer.register_template({
 			name = "PNPM Build with Env",
 			builder = function(params)
@@ -27,6 +30,7 @@ local plug = {
 			},
 			description = "Run build with custom NODE_ENV",
 		})
+
 		overseer.register_template({
 			name = "Custom Task",
 			builder = function(params)
@@ -38,6 +42,33 @@ local plug = {
 				}
 			end,
 		})
+
+		overseer.register_template({
+			name = "Cargo Test",
+			builder = function(params)
+				return {
+					cmd = "cargo",
+					args = { "test" },
+					cwd = find_file_path("Cargo.toml", false),
+					components = {
+						{ "default" },
+						-- { "on_output_quickfix", open = true },
+						-- { "on_result_diagnostics_quickfix", open = true },
+						{ "display_duration" },
+					},
+				}
+			end,
+			condition = {
+				callback = function()
+					-- Cargo.toml が存在する場合にのみタスクを有効化
+					local path = find_file_path("Cargo.toml", false)
+					return path
+				end,
+			},
+		})
+
+		vim.keymap.set('n', '<Leader>tt', '<cmd>OverseerToggle<CR>', { desc = '' })
+		vim.keymap.set('n', '<Leader>tr', '<cmd>OverseerRun<CR>', { desc = '' })
 	end,
 }
 
