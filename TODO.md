@@ -1,16 +1,15 @@
 # TODO
 
-- show be manage in the dotfiles
-  - rename repository to dotfiles
+- 初期化スクリプト作成
+  - 実行しなくとも手順書になる
+- wsl の ~/.config
 
 - WSL2設定
 - log repository を分離
 
-- toggle-term のトグルショートカット
-  - 現状`<C-t>`に割り当てているため、insertモードでindentが効かない
-  - `<Plug>(xxx)`, `<Nop>`で名前空間で解決できる？
-
 - Git環境
+  - git log --graph 調査
+  - diffview のみやすさ向上
   - vscode git graph のように複数ブランチの動きや進んでいるリモートブランチを把握したい
   - 数コミット前からの変更を左側に表示したい
     - Gitsigns の changebase が巨大リポジトリでうまくいかない
@@ -26,7 +25,6 @@
     - テストコードにも break point を設定できると良い
   - callstack
   - 変数の値を確認
-  - dap でうまくやれる？
 
 - js環境
   - import をコードアクションで補完したい
@@ -40,15 +38,13 @@
 - linterの検討, aleとの比較
   - mfussenegger/nvim-lint
 
-- keymap に description を追加したい
+- keymap
+  - 一か所にまとめる？
+  - description を追加したい
 
 - fold の活用
 - quickfix の活用
 - window separate の活用
-
-- 調査
-  - diffview
-    - 見やすさの向上
 
 - git workflow
   - DiffviewXxxx
