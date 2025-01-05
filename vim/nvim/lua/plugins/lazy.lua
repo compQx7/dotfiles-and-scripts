@@ -70,6 +70,7 @@ local plugins = {
 	require('plugins/ui/indent-blankline'),
 	require('plugins/ui/lualine'),
 	require('plugins/ui/render-markdown'),
+	require('plugins/ui/dressing'),
 
 	-- require('folke/which-key.nvim'),
 }
