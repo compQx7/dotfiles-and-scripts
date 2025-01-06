@@ -2,8 +2,9 @@
 -- local is_vscode = vim.fn.exists('g:vscode') == 1
 local is_vscode = require('utils').is_vscode
 
-require('core.autocmds')
 require('core.options')
+require('core.autocmds')
+require('core.keymaps')
 
 if vim.loop.os_uname().sysname == 'Windows_NT' then
 	local pwsh_options = {
@@ -22,7 +23,6 @@ end
 
 if not is_vscode then
 	require('plugins/lazy')
+	require('plugins/keymaps')
 end
-
-require('core.keymaps')
 

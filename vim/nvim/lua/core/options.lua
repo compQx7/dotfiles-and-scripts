@@ -1,3 +1,5 @@
+vim.api.nvim_set_var('mapleader', ' ')
+
 vim.opt.number = true
 vim.opt.cursorline = true
 

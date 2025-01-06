@@ -82,25 +82,17 @@ local copilotchat = {
 			},
 		})
 
-		function CopilotChatBuffer()
+		vim.api.nvim_create_user_command("CopilotChatBuffer", function()
 			local input = vim.fn.input("Quick Chat: ")
 			if input ~= "" then
 				require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
 			end
-		end
+		end, {})
 
-		vim.api.nvim_set_keymap("n", "<leader>ib", "<cmd>lua CopilotChatBuffer()<cr>", { noremap = true, silent = true })
-
-		function ShowCopilotChatActionPrompt()
+		vim.api.nvim_create_user_command("ShowCopilotChatActionPrompt", function()
 			local actions = require("CopilotChat.actions")
 			require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-		end
-
-		vim.api.nvim_set_keymap("n", "<leader>ip", "<cmd>lua ShowCopilotChatActionPrompt()<cr>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap("x", "<leader>ip", "<cmd>lua ShowCopilotChatActionPrompt()<cr>", { noremap = true, silent = true })
-
-		vim.api.nvim_set_keymap("n", "<leader>io", "<cmd>CopilotChatToggle<CR>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap("x", "<leader>io", "<cmd>CopilotChatToggle<CR>", { noremap = true, silent = true })
+		end, {})
 	end,
 }
 
