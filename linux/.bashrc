@@ -117,6 +117,11 @@ alias pip="pip3"
 alias vim="nvim"
 alias lg="lazygit"
 alias repo="cd ~/ghq/\$(ghq list | peco)"
+alias docl="docker container ls"
+alias doce="docker container exec -it"
+alias doil="docker image ls"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
