@@ -7,6 +7,7 @@ VerticalLayout1 = {
 			mirror = true, -- Toggle window to top/bottom
 		},
 	},
+	winblend = 20,
 }
 VerticalLayout2 = {
 	layout_strategy = "vertical",
@@ -17,6 +18,7 @@ VerticalLayout2 = {
 			mirror = true, -- Toggle window to top/bottom
 		},
 	},
+	winblend = 20,
 	file_ignore_patterns = {
 		-- TODO: escape の記法はこれで良い？
 		'^.git',
